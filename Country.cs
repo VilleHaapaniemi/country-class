@@ -6,13 +6,15 @@
         private string _name;
         private double _area;
         private int _population;
+        private City _capital;
         public Country(string code, string name, double area,
-        int population)
+        int population, City capital)
         {
             Code = code;
             Name = name;
             Area = area;
             Population = population;
+            Capital = capital;
         }
         public string Code
         { 
@@ -62,6 +64,14 @@
                 _population = value;
             }
         }
+        public City Capital
+        {
+            get => _capital;
+            set
+            {
+                _capital = value;
+            }
+        }
         public double PopulationDensity
         {
             get
@@ -71,7 +81,7 @@
         }
         public override string ToString()
         {
-            return $"{Code} {Name}";
+            return $"{Code} {Name} {Capital}";
         }
     }
 }
